@@ -11,8 +11,9 @@ import { products } from '../products';
 export class ProductListComponent {
   products = products;
 
-  share() {
-    window.alert('The product has been shared!');
+  // shareメソッド引数を追加
+  share(productName: string) {
+    window.alert('The product [' + productName +'] has been shared!');
   }
 }
 

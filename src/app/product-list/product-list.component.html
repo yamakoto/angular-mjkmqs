@@ -1,5 +1,28 @@
 <h2>Products</h2>
 
+<!-- *ngForは"構造ディレクティブ":  構造ディレクティブは、通常、それらが関連付けられている要素を追加、削除、および操作することによって、DOMの構造を整形または再構成します。 アスタリスク * の付いたディレクティブはすべて構造ディレクティブです。 -->
+<div *ngFor="let product of products">
+  <h3>
+    <!-- プロパティバインディング []: テンプレート式("～")の中でプロパティ値を使用できます。 -->
+    <!-- 試しに[]を削除するとわかりやすいよ -->
+    <a [title]="product.name + ' details'">
+      {{product.name}}
+    </a>
+  </h3>
+  <!-- 補間構文 {{ }} 。 補間は、プロパティの値をテキストとしてレンダリングします。 -->
+  <p>
+    ${{product.price}}
+  </p>
+
+  <p *ngIf="product.description">
+    description: {{product.description}}
+  </p>
+
+  <!-- ボタンのclickイベントを、（product-list.component.tsに）定義したshare()メソッドに紐付けます。 イベントバインディングは次の <button> 要素のように、イベントを囲むカッコ ( ) を使用します。 -->
+  <button (click)="share(product.name)">
+    submit
+  </button>
+</div>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
