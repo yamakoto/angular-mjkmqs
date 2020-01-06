@@ -1,3 +1,4 @@
 <p *ngIf="product.price > 700">
-  <button>Notify Me</button>
+  <!-- notify.emit()メソッドを呼び出すためのイベントバインディング -->
+  <button (click) = "notify.emit()">Notify Me</button>
 </p>

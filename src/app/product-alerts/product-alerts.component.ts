@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 // @Component()デコレーターに注目してください。 
 // これは、次のクラスがコンポーネントであることを示しています。
@@ -15,6 +16,10 @@ export class ProductAlertsComponent implements OnInit {
   // @Inputデコレーターはプロパティ値がコンポーネントの親（この場合は商品リストコンポーネント）から
   // 渡されることを示します
   @Input () product;
+  // @Output()デコレーターと EventEmitter() のインスタンスを使って、
+  // notifyという名前のプロパティを定義します。 
+  // これにより、notifyプロパティの値が変更されたときに製品アラートコンポーネントがイベントを発行することが可能になります。
+  @Output () notify = new EventEmitter();
   constructor() { }
 
 
