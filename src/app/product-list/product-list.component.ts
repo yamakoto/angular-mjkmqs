@@ -20,6 +20,6 @@ export class ProductListComponent {
 
 /*
 Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
+Use of this source code is governed by an MIT-style licens  e that
 can be found in the LICENSE file at http://angular.io/license
 */
